@@ -1,0 +1,74 @@
+<!-- <body>
+    {% for user in users %}
+    <ul>
+        <a href="{{ url_for('unique',id=user.id) }}">{{user.name}}</a>
+     </ul>
+    {% endfor %}
+</body>
+<-->
+<!--"<strong> Hello, World!</strong>"
+-->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <!-- retirar link static via URL 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     -->
+    
+    <link rel="stylesheet" href="{{url_for('static' ,  filename='css/bootstrap.min.css')}}">
+
+
+    
+    <!--
+incluindo a linha acima do bootstrap cdn retiramos o style
+
+
+
+    <style>
+        .notification{
+            text-align:center;
+            background-color:brown;
+            witdh: 100%;
+            height: 20px;
+        }
+    </style>
+    --> 
+
+</head>
+
+<body>
+    <!-- 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning text-center" role="alert">
+                    {{ message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} 
+        
+    -->
+
+
+  
+    
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning text-center" role="alert">
+                    {{ message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %} 
+
+    {% block conteudo %}
+    {% endblock %}
+
+</body>
+</html>

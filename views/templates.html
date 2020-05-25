@@ -1,0 +1,15 @@
+<!--"<strong> Hello, World!</strong>"
+-->
+{% extends "base.html" %}
+
+{% block conteudo %}
+    {% with messages = get_flashed_messages() %}
+        {% for k, v  in usersx.items() %}
+        <ul class="list-group list-group-flush"></ul>
+            <li class="list-group-item">
+                {{ k }} : {{ v }}
+            </li>
+        </ul>
+        {% endfor %}
+    {% endwith %} 
+{% endblock %}
